@@ -671,8 +671,10 @@
 #	endif// GLM_COMPILER & GLM_COMPILER_VC
 #endif
 
-// Not standard
-#define GLM_HAS_ANONYMOUS_UNION (GLM_LANG & GLM_LANG_CXXMS_FLAG)
+#if !defined(_MSC_VER)
+	// Not standard
+	#define GLM_HAS_ANONYMOUS_UNION (GLM_LANG & GLM_LANG_CXXMS_FLAG)
+#endif
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Platform 
